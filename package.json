@@ -9,9 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.2.4",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "marked": "^18.0.2",
+    "next": "^15.5.15",
+    "prismjs": "^1.30.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "swagger-parser": "^10.0.3",
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
