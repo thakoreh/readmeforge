@@ -26,5 +26,6 @@
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "Generate beautiful README files for your GitHub projects. Choose templates, add badges, and preview live."
 }
