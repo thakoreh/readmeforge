@@ -179,7 +179,7 @@ export default function Home() {
 
   const handleShareX = () => {
     const text = encodeURIComponent(
-      `Just generated a beautiful README.md from my OpenAPI spec using @ReadmeForge! 🚀 #API #DeveloperTools #OpenAPI`
+      `Just generated a beautiful API README.md from my OpenAPI spec using ReadmeForge 🔥🚀 #API #OpenAPI #DevTools`
     );
     window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
   };
