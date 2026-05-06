@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
           cache: npm
       - run: npm install
       - run: npm install next@15 react@19 react-dom@19
-      - run: npx next build
+      - run: npm run build
       - name: Add .nojekyll
         run: touch out/.nojekyll
       - name: Upload artifact

@@ -145,6 +145,7 @@ export default function Home() {
       const parsed = parseOpenAPI(openapiInput);
       const markdown = generateReadme(parsed, selectedTemplate);
       setGeneratedMarkdown(markdown);
+      window.localStorage.setItem("readmeforge-generated-readme", markdown);
     } catch (e) {
       setError((e as Error).message);
       setGeneratedMarkdown("");
@@ -358,6 +359,12 @@ export default function Home() {
                       </svg>
                       Download
                     </button>
+                    <a
+                      href="/readmeforge/preview"
+                      className="px-3 py-1.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-sm rounded-lg transition-colors flex items-center gap-1.5"
+                    >
+                      Full Preview
+                    </a>
                     <button
                       onClick={handleShareX}
                       className="px-3 py-1.5 bg-[#1DA1F2]/10 hover:bg-[#1DA1F2]/20 text-[#1DA1F2] text-sm rounded-lg transition-colors flex items-center gap-1.5"
