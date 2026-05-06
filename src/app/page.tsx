@@ -115,7 +115,7 @@ components:
       type: http
       scheme: bearer
       bearerFormat: API Key
-      description: Enter your API key in the format: Bearer <your_api_key>
+      description: "Enter your API key in the format: Bearer <your_api_key>"
 `;
 
 export default function Home() {
