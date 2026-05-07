@@ -106,8 +106,6 @@ function generateStripeStyle(data: OpenAPIData): string {
 
   out += `---\n\n`;
   out += `## Table of Contents\n\n`;
-  out += `- [Authentication](#authentication)\n`;
-  
   if (data.security.length > 0) {
     out += `- [Authentication](#authentication)\n`;
   }
