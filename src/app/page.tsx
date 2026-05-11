@@ -225,8 +225,7 @@ export default function Home() {
             Turn your{" "}
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               OpenAPI spec
-            </span>
-            <br />
+            </span>{" "}
             into a beautiful README.md
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
@@ -360,7 +359,7 @@ export default function Home() {
                       Download
                     </button>
                     <a
-                      href="/readmeforge/preview"
+                      href="/readmeforge/preview/"
                       className="px-3 py-1.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-sm rounded-lg transition-colors flex items-center gap-1.5"
                     >
                       Full Preview
