@@ -21,6 +21,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/prismjs": "^1.26.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
@@ -28,5 +29,5 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   },
-  "description": "Generate beautiful README files for your GitHub projects. Choose templates, add badges, and preview live."
+  "description": "Turn OpenAPI specs into beautiful API README.md files with live preview and five documentation templates."
 }

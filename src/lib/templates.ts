@@ -121,7 +121,7 @@ function generateStripeStyle(data: OpenAPIData): string {
     out += `## Authentication\n\n`;
     out += `${data.security[0].description}\n\n`;
     
-    out += `\`\`\`\n`;
+    out += `\`\`\`http\n`;
     if (data.security[0].type === "http") {
       out += `Authorization: Bearer <your_api_key>\n`;
     } else if (data.security[0].type === "apiKey") {

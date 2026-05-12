@@ -1,9 +1,16 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { parseOpenAPI, validateOpenAPI } from "@/lib/parser";
 import { generateReadme, TEMPLATES, TemplateId } from "@/lib/templates";
 import { marked } from "marked";
+import Prism from "prismjs";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-http";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-yaml";
+import "prismjs/components/prism-markdown";
+import "prismjs/themes/prism-tomorrow.css";
 
 const SAMPLE_OPENAPI = `openapi: 3.0.3
 info:
@@ -186,6 +193,12 @@ export default function Home() {
   };
 
   const previewHtml = generatedMarkdown ? marked(generatedMarkdown) : "";
+
+  useEffect(() => {
+    if (generatedMarkdown) {
+      Prism.highlightAll();
+    }
+  }, [generatedMarkdown, selectedTemplate]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -463,8 +476,8 @@ export default function Home() {
       <footer className="py-8 px-4 border-t border-zinc-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-sm text-zinc-500">
           <p>Built by{" "}
-            <a href="https://twitter.com/tireddev" className="text-indigo-400 hover:text-indigo-300 transition-colors">
-              @tireddev
+            <a href="https://x.com/hirenthakore" className="text-indigo-400 hover:text-indigo-300 transition-colors">
+              @hirenthakore
             </a>
           </p>
           <p>Powered by OpenAPI 3.0</p>

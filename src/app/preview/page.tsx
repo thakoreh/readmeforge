@@ -1,7 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { marked } from "marked";
+import Prism from "prismjs";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-http";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-yaml";
+import "prismjs/components/prism-markdown";
+import "prismjs/themes/prism-tomorrow.css";
 
 const EMPTY_MARKDOWN = `# Your README preview will appear here
 
@@ -13,14 +20,21 @@ Generate a README on the home page, then open full preview.
 `;
 
 export default function PreviewPage() {
-  const [markdown, setMarkdown] = useState(() => {
-    if (typeof window === "undefined") return EMPTY_MARKDOWN;
-    const saved = window.localStorage.getItem("readmeforge-generated-readme");
-    return saved?.trim() ? saved : EMPTY_MARKDOWN;
-  });
+  const [markdown, setMarkdown] = useState(EMPTY_MARKDOWN);
   const [copied, setCopied] = useState(false);
 
+  useEffect(() => {
+    const saved = window.localStorage.getItem("readmeforge-generated-readme");
+    if (saved?.trim()) {
+      queueMicrotask(() => setMarkdown(saved));
+    }
+  }, []);
+
   const previewHtml = useMemo(() => marked(markdown), [markdown]);
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [markdown]);
 
   const copyMarkdown = async () => {
     await navigator.clipboard.writeText(markdown);
